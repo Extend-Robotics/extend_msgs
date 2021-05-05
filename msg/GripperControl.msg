@@ -1,0 +1,2 @@
+std_msgs/Int16 magnet_status
+std_msgs/Int16 gripper_status
