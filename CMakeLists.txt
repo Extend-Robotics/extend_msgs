@@ -14,6 +14,7 @@ add_message_files(
   FILES
   ArmControl.msg
   ArmResponse.msg
+  GripperControl.msg
 )
 
 
