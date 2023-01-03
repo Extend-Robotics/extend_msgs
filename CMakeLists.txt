@@ -17,6 +17,13 @@ add_message_files(
   GripperControl.msg
 )
 
+add_service_files(
+  FILES
+  GetListOfFiles.srv
+  LoadFile.srv
+  SaveFile.srv
+)
+
 
 generate_messages(
   DEPENDENCIES

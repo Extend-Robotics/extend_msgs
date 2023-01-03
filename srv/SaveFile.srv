@@ -1,0 +1,5 @@
+string path
+string contents
+---
+bool success
+uint8 error
