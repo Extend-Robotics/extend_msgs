@@ -20,6 +20,7 @@ add_message_files(
 add_service_files(
   FILES
   GetListOfFiles.srv
+  LoadAllFilesInFolder.srv
   LoadFile.srv
   SaveFile.srv
 )

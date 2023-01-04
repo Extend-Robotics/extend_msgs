@@ -1,0 +1,6 @@
+string path
+---
+# each string represents a separate file
+string[] contents
+bool success
+uint8 error
