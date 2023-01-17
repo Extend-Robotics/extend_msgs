@@ -23,6 +23,7 @@ add_service_files(
   LoadAllFilesInFolder.srv
   LoadFile.srv
   SaveFile.srv
+  DeleteFile.srv
 )
 
 
