@@ -14,6 +14,8 @@ add_message_files(
   ArmControl.msg
   ArmResponse.msg
   GripperControl.msg
+  BioIKTarget.msg
+  LinkDetails.msg
 )
 
 add_service_files(

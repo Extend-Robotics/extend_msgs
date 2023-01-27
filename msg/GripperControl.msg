@@ -1,5 +1,5 @@
-std_msgs/Bool gripper_digital
-std_msgs/Float64 gripper_analog
-std_msgs/Float64 gripper_effort
-std_msgs/Int16 gripper_pin
+std_msgs/Bool gripperDigital
+std_msgs/Float64 gripperAnalog
+std_msgs/Float64 gripperEffort
+std_msgs/Int16 gripperPin
 
