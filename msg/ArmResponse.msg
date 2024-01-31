@@ -13,3 +13,7 @@ float64[] jointTorque
 
 # linkDetails contains the detail such as the name and the Pose of the target link in the physical robot
 extend_msgs/LinkDetails[] linkDetails
+
+
+# Plan using planner
+moveit_msgs/RobotTrajectory plan
