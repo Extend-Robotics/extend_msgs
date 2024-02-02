@@ -7,6 +7,7 @@ find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   genmsg
   sensor_msgs
+  moveit_msgs
 )
 
 add_message_files(
@@ -33,6 +34,7 @@ generate_messages(
   std_msgs
   geometry_msgs
   sensor_msgs
+  moveit_msgs
 )
 
 catkin_package(
