@@ -17,6 +17,7 @@ add_message_files(
   GripperControl.msg
   BioIKTarget.msg
   LinkDetails.msg
+  ControlDebug.msg
 )
 
 add_service_files(
