@@ -1,0 +1,8 @@
+#operationMode 
+# 1 -> Add the topic from the new client to the er_control_mux
+# 2 -> Select the client to the output string
+# 3 -> Request to control
+std_msgs/Int16 operationMode
+string instreamTopicName
+---
+string outstreamTopic

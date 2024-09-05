@@ -28,6 +28,7 @@ add_service_files(
   LoadFile.srv
   SaveFile.srv
   DeleteFile.srv
+  ControlManager.srv
 )
 
 
