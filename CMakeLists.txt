@@ -8,6 +8,7 @@ find_package(catkin REQUIRED COMPONENTS
   genmsg
   sensor_msgs
   moveit_msgs
+  nav_msgs
 )
 
 add_message_files(
@@ -19,6 +20,8 @@ add_message_files(
   LinkDetails.msg
   ControlDebug.msg
   GripperResponse.msg
+  ExtendControl.msg
+  ExtendResponse.msg
 )
 
 add_service_files(
@@ -38,6 +41,7 @@ generate_messages(
   geometry_msgs
   sensor_msgs
   moveit_msgs
+  nav_msgs
 )
 
 catkin_package(
