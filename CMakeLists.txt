@@ -9,6 +9,8 @@ find_package(catkin REQUIRED COMPONENTS
   sensor_msgs
   moveit_msgs
   nav_msgs
+  actionlib 
+  actionlib_msgs
 )
 
 add_message_files(
@@ -22,6 +24,7 @@ add_message_files(
   GripperResponse.msg
   ExtendControl.msg
   ExtendResponse.msg
+  FileUploadStatus.msg
 )
 
 add_service_files(
@@ -34,6 +37,10 @@ add_service_files(
   ControlManager.srv
 )
 
+add_action_files(
+  DIRECTORY action
+  FILES CollectData.action
+)
 
 generate_messages(
   DEPENDENCIES
@@ -42,6 +49,8 @@ generate_messages(
   sensor_msgs
   moveit_msgs
   nav_msgs
+  actionlib 
+  actionlib_msgs
 )
 
 catkin_package(
