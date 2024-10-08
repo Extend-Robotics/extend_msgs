@@ -6,6 +6,7 @@ string status
 # 0 - Done
 # 1 - Processing
 # 2 - Uploading
+# 3 - Error
 std_msgs/Int16 status_mode
 # total number of files to upload              
 int32 num_files_to_upload   
