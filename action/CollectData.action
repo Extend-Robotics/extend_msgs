@@ -1,0 +1,14 @@
+# Goal: Start data collection
+string dataset_dir
+string task_name
+int32 episode_idx
+int32 max_timesteps
+
+---
+# Result: Notify when the data collection is done
+bool success
+string result_message
+
+---
+# Feedback: Send progress updates
+int32 current_step
