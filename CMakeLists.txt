@@ -22,8 +22,6 @@ add_message_files(
   LinkDetails.msg
   ControlDebug.msg
   GripperResponse.msg
-  ExtendControl.msg
-  ExtendResponse.msg
   FileUploadStatus.msg
 )
 
