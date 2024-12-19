@@ -4,8 +4,6 @@ extend_msgs/ArmControl armControl
 
 extend_msgs/GripperControl gripperControl
 
-geometry_msgs/Twist mobileBaseControl
+extend_msgs/MobileBaseCommand mobileBaseControl
 
-geometry_msgs/Pose mobileBasePose
-
-std_msgs/Int16 metaDataServiceRequest
+std_msgs/Int16 operationalServicesRequest
