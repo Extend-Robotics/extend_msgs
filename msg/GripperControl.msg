@@ -12,11 +12,5 @@ std_msgs/Float64 gripperEffortCommand
 #IO Pin setting for 2F gripper 
 std_msgs/Int16 gripperPinSetup
 
-#Joint Value Command for 5F gripper 
-float64[] handJointValuesCommand
-
-#Joint Velocity Command for 5F gripper
-float64[] handJointVelocitiesCommand
-
-#Joint Effort Command for 5F gripper
-float64[] handJointEffortsCommand
+#Joint Based Commands for 5F Gripper
+extend_msgs/JointCommand gripperJointCommands

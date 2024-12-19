@@ -24,6 +24,7 @@ add_message_files(
   FileUploadStatus.msg
   GripperControl.msg
   GripperResponse.msg
+  JointCommand.msg
   JointInfo.msg
   LinkDetails.msg
   MobileBaseCommand.msg
