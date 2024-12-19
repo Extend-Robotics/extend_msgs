@@ -17,12 +17,18 @@ add_message_files(
   FILES
   ArmControl.msg
   ArmResponse.msg
-  GripperControl.msg
   BioIKTarget.msg
-  LinkDetails.msg
   ControlDebug.msg
-  GripperResponse.msg
+  ExtendControl.msg
+  ExtendResponse.msg
   FileUploadStatus.msg
+  GripperControl.msg
+  GripperResponse.msg
+  JointInfo.msg
+  LinkDetails.msg
+  MobileBaseCommand.msg
+  MobileBaseResponse.msg
+  SensorInfo.msg
 )
 
 add_service_files(

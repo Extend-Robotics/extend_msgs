@@ -1,6 +1,22 @@
 std_msgs/Header header
-std_msgs/Bool gripperDigital
-std_msgs/Float64 gripperAnalog
-std_msgs/Float64 gripperEffort
-std_msgs/Int16 gripperPin
-float64[] handJointValues
+
+#Digital control for 2F gripper 
+std_msgs/Bool gripperDigitalCommand
+
+#Analog control for 2F gripper 
+std_msgs/Float64 gripperAnalogCommand
+
+#Effort Based control for 2F gripper 
+std_msgs/Float64 gripperEffortCommand
+
+#IO Pin setting for 2F gripper 
+std_msgs/Int16 gripperPinSetup
+
+#Joint Value Command for 5F gripper 
+float64[] handJointValuesCommand
+
+#Joint Velocity Command for 5F gripper
+float64[] handJointVelocitiesCommand
+
+#Joint Effort Command for 5F gripper
+float64[] handJointEffortsCommand

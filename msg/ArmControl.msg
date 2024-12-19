@@ -9,6 +9,11 @@ std_msgs/Int16 mode
 # List of IK targets 
 extend_msgs/BioIKTarget[] targets
 
+# joint position command 
+float64[] jointPositionsCommand
 
-# jointStates contains present position of each active joint
-float64[] jointStates
+# joint Velocity Command
+float64[] jointVelocitiesCommand
+
+# joint Effort Command
+float64[] jointEffortCommand

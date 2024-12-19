@@ -1,8 +1,14 @@
 # Header Values
 std_msgs/Header header
 
-#Values of Joint positions
-float64[] gripperJointValues
+# ID of the gripper
+int32[] gripperID
 
-#Force Feedback values
-float64[] gripperForceValues
+#Gripper Type 
+string[] gripperType
+
+extend_msgs/JointInfo gripperJointInfo
+
+extend_msgs/SensorInfo[] gripperSensorInfo
+
+int32 gripperError

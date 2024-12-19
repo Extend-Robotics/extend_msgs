@@ -1,19 +1,20 @@
 std_msgs/Header header
 
-# armResponse denotes the state of the physical robot arm
-std_msgs/Int16 armResponse
+# armStatus denotes the state of the physical robot arm
+std_msgs/Int16 armStatus
 
-# bioIKResponse denotes the state of the bio IK
-std_msgs/Int16 bioIKResponse
+# bioIKState denotes the state of the bio IK
+std_msgs/Int16 bioIKState
 
-# jointStates contains present position (in  radians) of each active joint
-float64[] jointStates
-
-float64[] jointTorque
+#Joint Info
+extend_msgs/JointInfo armJointInfo
 
 # linkDetails contains the detail such as the name and the Pose of the target link in the physical robot
 extend_msgs/LinkDetails[] linkDetails
 
-
 # Plan using planner
 moveit_msgs/RobotTrajectory plan
+
+# Sensor Info 
+extend_msgs/SensorInfo[] armSensorInfo
+
