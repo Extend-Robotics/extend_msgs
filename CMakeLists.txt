@@ -23,6 +23,8 @@ add_message_files(
   ControlDebug.msg
   GripperResponse.msg
   FileUploadStatus.msg
+  GripperJointInfo.msg
+  GripperSensorInfo.msg
 )
 
 add_service_files(
