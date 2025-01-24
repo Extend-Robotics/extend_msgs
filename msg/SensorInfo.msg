@@ -1,9 +1,6 @@
-
 string sensorLocation
 
-geometry_msgs/Vector3[] forceSensorVectorValues
-
-geometry_msgs/Vector3[] torqueSensorVectorValues
+geometry_msgs/Twist[] ftSensorValues
 
 int32[] sensorTemperatures
 

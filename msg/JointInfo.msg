@@ -1,5 +1,5 @@
 #Joint Info
-sensor_msgs/JointState jointStateInfo
+sensor_msgs/JointState jointState
 
 #Joint Temperature Values 
 float32[] jointTemperature

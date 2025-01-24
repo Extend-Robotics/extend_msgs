@@ -1,16 +1,17 @@
+# Header Values
 std_msgs/Header header
 
-#Digital control for 2F gripper 
-std_msgs/Bool gripperDigitalCommand
+#Name of the end effector
+string eefName
 
-#Analog control for 2F gripper 
-std_msgs/Float64 gripperAnalogCommand
+# ID of the end effector
+int32[] eefID
 
-#Effort Based control for 2F gripper 
-std_msgs/Float64 gripperEffortCommand
+#IO Pin setting for end effector
+std_msgs/Int16 eefPinSetup
 
-#IO Pin setting for 2F gripper 
-std_msgs/Int16 gripperPinSetup
+#End Effector Modes (Currently not in used)
+std_msgs/Int16 mode
 
-#Joint Based Commands for 5F Gripper
-extend_msgs/JointCommand gripperJointCommands
+#Command for the End Effector Joints  (Length is based on the DOF of the end effector)
+trajectory_msgs/JointTrajectoryPoint eefJointTrajectoryPoint
