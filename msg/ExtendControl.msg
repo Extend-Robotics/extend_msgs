@@ -11,4 +11,5 @@ extend_msgs/GripperControl gripperControl
 extend_msgs/MobileBaseCommand mobileBaseControl
 
 #Request to service manager to perform tasks such as clear error, ft sensor initialization, mode or state change, etc.
-std_msgs/Int16 operationalRequest
+#Data[0] -> Request Type Data [1-n] -> additional data for request fulfilment 
+std_msgs/Int16[] operationalRequestData 
