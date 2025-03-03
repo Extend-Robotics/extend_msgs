@@ -25,6 +25,7 @@ add_message_files(
   FileUploadStatus.msg
   GripperJointInfo.msg
   GripperSensorInfo.msg
+  CortexConfiguration.msg
 )
 
 add_service_files(
@@ -35,6 +36,7 @@ add_service_files(
   SaveFile.srv
   DeleteFile.srv
   ControlManager.srv
+  CortexConfigurationInfo.srv
 )
 
 add_action_files(
