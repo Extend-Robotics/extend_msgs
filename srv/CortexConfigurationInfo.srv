@@ -1,3 +1,4 @@
+string connectionIP
 ---
 string cortexName
 CortexConfiguration[] cortexConfiguration
