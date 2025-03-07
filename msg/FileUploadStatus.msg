@@ -8,5 +8,13 @@ string status
 # 2 - Uploading
 # 3 - Error
 std_msgs/Int16 status_mode
+# name of the current file being uploaded
+string current_file_name    
+# size of the current file being uploaded (formatted as string)
+string current_file_size    
 # total number of files to upload              
-int32 num_files_to_upload   
+int32 num_files_to_upload
+# total size of files to upload (formatted as string)
+string num_files_to_upload_size    
+# estimated time remaining (formatted as string)
+string estimated_time_remaining    
