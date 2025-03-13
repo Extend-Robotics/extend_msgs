@@ -37,6 +37,7 @@ add_service_files(
   DeleteFile.srv
   ControlManager.srv
   CortexConfigurationInfo.srv
+  SafetyParameter.srv
 )
 
 add_action_files(
