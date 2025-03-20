@@ -26,6 +26,7 @@ add_message_files(
   GripperJointInfo.msg
   GripperSensorInfo.msg
   CortexConfiguration.msg
+  ConnectionManager.msg
 )
 
 add_service_files(

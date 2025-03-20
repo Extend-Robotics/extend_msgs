@@ -7,4 +7,5 @@ string instreamTopicName
 ---
 std_msgs/Int16 responseCode
 string outstreamTopic
+string teleopControllerTopic
 string[] muxInputTopics
