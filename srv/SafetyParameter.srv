@@ -1,4 +1,3 @@
 float64[] fs004ThresholdArray
-float64[] resumeThresholdArray
 ---
 bool success
