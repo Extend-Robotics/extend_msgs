@@ -1,11 +1,12 @@
 #operationMode 
-# 1 -> Add the topic from the new client to the er_control_mux
-# 2 -> Select the client to the output string
-# 3 -> Request to control
+	# 1 : List topics on the MUX
+	# 2 : Add topic to the MUX
+	# 3 : Select a topic for MUX output
+	# 4 : Current Selected Topic for output
+	# 5 : Delete Topic from the List
+	# 6 : Control Request Denied Bump the potential controller to next
 std_msgs/Int16 operationMode
 string instreamTopicName
 ---
 std_msgs/Int16 responseCode
 string outstreamTopic
-string teleopControllerTopic
-string[] muxInputTopics
