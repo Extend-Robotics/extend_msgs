@@ -1,6 +1,6 @@
 
-string gripperSensorLocation
+string gripper_sensor_location
 
-geometry_msgs/Vector3[] gripperforceSensorVectorValues
+geometry_msgs/Vector3[] gripper_force_sensor_vector_values
 
-int32[] gripperSensorTemperatures
+int32[] gripper_sensor_temperatures

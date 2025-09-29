@@ -5,8 +5,8 @@
 	# 4 : Current Selected Topic for output
 	# 5 : Delete Topic from the List
 	# 6 : Control Request Denied Bump the potential controller to next
-std_msgs/Int16 operationMode
-string instreamTopicName
+std_msgs/Int16 operation_mode
+string instream_topic_name
 ---
-std_msgs/Int16 responseCode
-string outstreamTopic
+std_msgs/Int16 response_code
+string outstream_topic

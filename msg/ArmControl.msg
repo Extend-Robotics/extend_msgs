@@ -11,4 +11,4 @@ extend_msgs/BioIKTarget[] targets
 
 
 # jointStates contains present position of each active joint
-float64[] jointStates
+float64[] joint_states

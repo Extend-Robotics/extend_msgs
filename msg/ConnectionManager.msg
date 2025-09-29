@@ -1,4 +1,4 @@
-string[] connectionQueue
-string currentTeleopController
-string potentialTeleopController
-string[] deregisteredConnections
+string[] connection_queue
+string current_teleop_controller
+string potential_teleop_controller
+string[] deregistered_connections
