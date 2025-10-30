@@ -1,0 +1,1 @@
+extend_msgs/ErrorInfo[] system_error_states
