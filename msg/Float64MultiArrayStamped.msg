@@ -1,4 +1,4 @@
-# Please look at the MultiArrayLayout message definition for
+# Please look at the std_msgs/MultiArrayLayout message definition for
 # documentation on all multiarrays.
 
 Header header
