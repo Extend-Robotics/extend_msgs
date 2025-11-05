@@ -21,6 +21,7 @@ add_message_files(
   BioIKTarget.msg
   LinkDetails.msg
   ControlDebug.msg
+  Float64MultiArrayStamped.msg
   GripperResponse.msg
   FileUploadStatus.msg
   GripperJointInfo.msg
