@@ -27,6 +27,8 @@ add_message_files(
   GripperSensorInfo.msg
   CortexConfiguration.msg
   ConnectionManager.msg
+  VRHandStates.msg
+  HandStateInfo.msg
 )
 
 add_service_files(
