@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   nav_msgs
   actionlib 
   actionlib_msgs
+  tf2_msgs
 )
 
 add_message_files(
@@ -57,6 +58,7 @@ generate_messages(
   nav_msgs
   actionlib 
   actionlib_msgs
+  tf2_msgs
 )
 
 catkin_package(
