@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   nav_msgs
   actionlib 
   actionlib_msgs
+  tf2_msgs
 )
 
 add_message_files(
@@ -21,6 +22,7 @@ add_message_files(
   BioIKTarget.msg
   LinkDetails.msg
   ControlDebug.msg
+  Float64MultiArrayStamped.msg
   GripperResponse.msg
   FileUploadStatus.msg
   GripperJointInfo.msg
@@ -58,6 +60,7 @@ generate_messages(
   nav_msgs
   actionlib 
   actionlib_msgs
+  tf2_msgs
 )
 
 catkin_package(
