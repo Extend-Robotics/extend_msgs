@@ -22,6 +22,7 @@ add_message_files(
   BioIKTarget.msg
   LinkDetails.msg
   ControlDebug.msg
+  Float64MultiArrayStamped.msg
   GripperResponse.msg
   FileUploadStatus.msg
   GripperJointInfo.msg
@@ -30,6 +31,7 @@ add_message_files(
   ConnectionManager.msg
   VRHandStates.msg
   HandStateInfo.msg
+  VRTransform.msg
 )
 
 add_service_files(
