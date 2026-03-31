@@ -40,6 +40,7 @@ add_service_files(
   ControlManager.srv
   CortexConfigurationInfo.srv
   SafetyParameter.srv
+  GetString.srv
 )
 
 add_action_files(
