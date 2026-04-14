@@ -1,4 +1,4 @@
-string connectionIP
+string connection_ip
 ---
-string cortexName
-CortexConfiguration[] cortexConfiguration
+string cortex_name
+CortexConfiguration[] cortex_configuration

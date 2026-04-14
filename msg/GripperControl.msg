@@ -1,6 +1,6 @@
 std_msgs/Header header
-std_msgs/Bool gripperDigital
-std_msgs/Float64 gripperAnalog
-std_msgs/Float64 gripperEffort
-std_msgs/Int16 gripperPin
-float64[] handJointValues
+std_msgs/Bool gripper_digital
+std_msgs/Float64 gripper_analog
+std_msgs/Float64 gripper_effort
+std_msgs/Int16 gripper_pin
+float64[] hand_joint_values

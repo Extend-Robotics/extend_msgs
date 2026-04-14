@@ -1,5 +1,5 @@
 # The name of this goal's end effector link
-string linkName
+string link_name
 
 # The name of the link that the goal is defined with respect to
 string referenceLinkName

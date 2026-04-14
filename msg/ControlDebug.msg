@@ -1,4 +1,3 @@
-std_msgs/Header commandGeneratedTimestamp
-std_msgs/Header commandReceivedTimestamp
-std_msgs/Header commandProcessedTimestamp
-
+std_msgs/Header command_generated_timestamp
+std_msgs/Header command_received_timestamp
+std_msgs/Header command_processed_timestamp

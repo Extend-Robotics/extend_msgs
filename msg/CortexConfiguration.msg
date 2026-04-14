@@ -1,5 +1,5 @@
 string name
-string deviceType
-string connectionIP
-string rosPort
-string configFilePath
+string device_type
+string connection_ip
+string ros_port
+string config_file_path
