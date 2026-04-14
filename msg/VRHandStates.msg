@@ -1,0 +1,3 @@
+std_msgs/Header header
+extend_msgs/HandStateInfo left_hand_info
+extend_msgs/HandStateInfo right_hand_info
