@@ -8,10 +8,9 @@ string interacting_object
 std_msgs/Float64 analog_value
 
 # Button Press State
-std_msgs/Bool button_a_press_state
-std_msgs/Bool button_b_press_state
-std_msgs/Bool button_x_press_state
-std_msgs/Bool button_y_press_state
+std_msgs/Bool primary_button_press_state
+std_msgs/Bool secondary_button_press_state
+std_msgs/Bool joystick_button_press_state
 
 # Gesture currently requested by user with multi finger gripper and controller
 string active_gesture_name
