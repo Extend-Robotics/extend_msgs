@@ -5,4 +5,4 @@ string code        # error code from ErrorCodeList.md, deduplicated together wit
 string definition  # short error title shown to the operator
 string resolution  # instructions telling the operator how to resolve the error
 ---
-bool ack
+bool ack           # true: accepted and queued for display (deduplicated while active); false: rejected (empty code/definition, or AMAS cannot deliver)
