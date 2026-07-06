@@ -1,0 +1,8 @@
+# Raise an operator-facing error notification in the AMAS UI (service is served by AMAS over rosbridge).
+# Error codes are tracked in https://github.com/Extend-Robotics/unity_error_manager/blob/main/ErrorCodeList.md
+string source      # entity the error relates to, shown as the affected object in the AMAS error UI
+string code        # error code from ErrorCodeList.md, deduplicated together with source
+string definition  # short error title shown to the operator
+string resolution  # instructions telling the operator how to resolve the error
+---
+bool ack

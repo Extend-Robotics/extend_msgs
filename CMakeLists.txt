@@ -44,6 +44,7 @@ add_service_files(
   ControlManager.srv
   CortexConfigurationInfo.srv
   SafetyParameter.srv
+  RaiseOperatorError.srv
 )
 
 add_action_files(
