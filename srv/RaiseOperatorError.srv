@@ -3,5 +3,6 @@ string source      # entity the error relates to, shown as the affected object i
 string code        # stable identifier for this error type (e.g. 'collision_detected'), deduplicated together with source while active
 string definition  # short error title shown to the operator
 string resolution  # instructions telling the operator how to resolve the error
+bool resolved      # false: raise the error; true: the condition has cleared, remove the active error matching (source, code)
 ---
-bool ack           # true: accepted and queued for display (deduplicated while active); false: rejected (empty code/definition, or AMAS cannot deliver)
+bool ack           # true: accepted and queued for delivery; false: rejected (empty code/definition, or AMAS cannot deliver)
