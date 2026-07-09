@@ -1,0 +1,8 @@
+# Raise an operator-facing error notification in the AMAS UI (service is served by AMAS over rosbridge).
+string source      # entity the error relates to, shown as the affected object in the AMAS error UI
+string code        # stable identifier for this error type (e.g. 'collision_detected'), deduplicated together with source while active
+string definition  # short error title shown to the operator
+string resolution  # instructions telling the operator how to resolve the error
+bool resolved      # false: raise the error; true: the condition has cleared, remove the active error matching (source, code)
+---
+bool ack           # true: accepted and queued for delivery; false: rejected (empty code/definition, or AMAS cannot deliver)
