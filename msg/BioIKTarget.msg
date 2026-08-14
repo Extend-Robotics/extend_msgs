@@ -2,9 +2,6 @@
 string link_name
 
 # The name of the link that the goal is defined with respect to
-# camelCase keeps this message ROS 1 only (rosidl requires snake_case);
-# renaming it changes the rosbridge JSON contract, so extend_bio_ik and the
-# Unity sender must move in lockstep with it (see CMakeLists.txt, ERD-2166)
 string referenceLinkName
 
 # Weight of the current goal
