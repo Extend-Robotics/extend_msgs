@@ -2,9 +2,7 @@ cmake_minimum_required(VERSION 3.8)
 project(extend_msgs)
 
 # One branch serves both ROS versions (ERD-2166): the catkin and colcon builds
-# of the combined image each take their arm of this dispatch.
-# ArmResponse (moveit_msgs), ArmControl and BioIKTarget (camelCase field
-# rosidl rejects) are generated for ROS 1 only.
+# of the combined ub22 image each take their arm of this dispatch.
 
 if("$ENV{ROS_VERSION}" STREQUAL "1")
 
@@ -80,11 +78,18 @@ elseif("$ENV{ROS_VERSION}" STREQUAL "2")
   find_package(ament_cmake REQUIRED)
   find_package(std_msgs REQUIRED)
   find_package(geometry_msgs REQUIRED)
-  find_package(sensor_msgs REQUIRED)
-  find_package(nav_msgs REQUIRED)
   find_package(tf2_msgs REQUIRED)
   find_package(rosidl_default_generators REQUIRED)
 
+  # Three interfaces are ROS 1 only:
+  #   BioIKTarget - referenceLinkName breaks rosidl's field-name rule
+  #                 ^[a-z][a-z0-9_]*$; renaming it is a rosbridge wire-format
+  #                 change across extend_bio_ik and the Unity sender, deferred
+  #                 until a ROS 2 consumer needs this message.
+  #   ArmControl  - embeds BioIKTarget[], so it cannot generate without it.
+  #   ArmResponse - sole user of moveit_msgs; no ROS 2 consumer needs it.
+  # Anything added below needs snake_case field names and fully-qualified
+  # types (std_msgs/Header, never bare Header) or rosidl generation fails.
   rosidl_generate_interfaces(${PROJECT_NAME}
     msg/GripperControl.msg
     msg/LinkDetails.msg
@@ -109,7 +114,7 @@ elseif("$ENV{ROS_VERSION}" STREQUAL "2")
     srv/SafetyParameter.srv
     srv/RaiseOperatorError.srv
     action/CollectData.action
-    DEPENDENCIES std_msgs geometry_msgs sensor_msgs nav_msgs tf2_msgs
+    DEPENDENCIES std_msgs geometry_msgs tf2_msgs
   )
 
   ament_package()

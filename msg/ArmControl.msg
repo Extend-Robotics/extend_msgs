@@ -1,3 +1,4 @@
+# ROS 1 only: not generated under ROS 2 because it embeds BioIKTarget (see CMakeLists.txt).
 std_msgs/Header header
 
 # mode used to decide the operation mode could be 

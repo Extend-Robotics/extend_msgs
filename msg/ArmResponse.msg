@@ -1,3 +1,4 @@
+# ROS 1 only: sole user of moveit_msgs, not generated under ROS 2 (see CMakeLists.txt).
 std_msgs/Header header
 
 # armResponse denotes the state of the physical robot arm
