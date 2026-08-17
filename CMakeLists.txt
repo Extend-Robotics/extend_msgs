@@ -1,69 +1,127 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.8)
 project(extend_msgs)
 
-find_package(catkin REQUIRED COMPONENTS
-  std_msgs
-  message_generation
-  geometry_msgs
-  genmsg
-  sensor_msgs
-  moveit_msgs
-  nav_msgs
-  actionlib 
-  actionlib_msgs
-  tf2_msgs
-)
+# One branch serves both ROS versions (ERD-2166): the catkin and colcon builds
+# of the combined ub22 image each take their arm of this dispatch.
 
-add_message_files(
-  FILES
-  ArmControl.msg
-  ArmResponse.msg
-  GripperControl.msg
-  BioIKTarget.msg
-  LinkDetails.msg
-  ControlDebug.msg
-  Float64MultiArrayStamped.msg
-  GripperResponse.msg
-  FileUploadStatus.msg
-  GripperJointInfo.msg
-  GripperSensorInfo.msg
-  CortexConfiguration.msg
-  ConnectionManager.msg
-  VRHandStates.msg
-  HandStateInfo.msg
-  VRTransform.msg
-)
+if("$ENV{ROS_VERSION}" STREQUAL "1")
 
-add_service_files(
-  FILES
-  GetListOfFiles.srv
-  LoadAllFilesInFolder.srv
-  LoadFile.srv
-  SaveFile.srv
-  DeleteFile.srv
-  ControlManager.srv
-  CortexConfigurationInfo.srv
-  SafetyParameter.srv
-  RaiseOperatorError.srv
-)
+  find_package(catkin REQUIRED COMPONENTS
+    std_msgs
+    message_generation
+    geometry_msgs
+    genmsg
+    sensor_msgs
+    moveit_msgs
+    nav_msgs
+    actionlib
+    actionlib_msgs
+    tf2_msgs
+  )
 
-add_action_files(
-  DIRECTORY action
-  FILES CollectData.action
-)
+  add_message_files(
+    FILES
+    ArmControl.msg
+    ArmResponse.msg
+    GripperControl.msg
+    BioIKTarget.msg
+    LinkDetails.msg
+    ControlDebug.msg
+    Float64MultiArrayStamped.msg
+    GripperResponse.msg
+    FileUploadStatus.msg
+    GripperJointInfo.msg
+    GripperSensorInfo.msg
+    CortexConfiguration.msg
+    ConnectionManager.msg
+    VRHandStates.msg
+    HandStateInfo.msg
+    VRTransform.msg
+  )
 
-generate_messages(
-  DEPENDENCIES
-  std_msgs
-  geometry_msgs
-  sensor_msgs
-  moveit_msgs
-  nav_msgs
-  actionlib 
-  actionlib_msgs
-  tf2_msgs
-)
+  add_service_files(
+    FILES
+    GetListOfFiles.srv
+    LoadAllFilesInFolder.srv
+    LoadFile.srv
+    SaveFile.srv
+    DeleteFile.srv
+    ControlManager.srv
+    CortexConfigurationInfo.srv
+    SafetyParameter.srv
+    RaiseOperatorError.srv
+  )
 
-catkin_package(
-  DEPENDS message_runtime
-)
+  add_action_files(
+    DIRECTORY action
+    FILES CollectData.action
+  )
+
+  generate_messages(
+    DEPENDENCIES
+    std_msgs
+    geometry_msgs
+    sensor_msgs
+    moveit_msgs
+    nav_msgs
+    actionlib
+    actionlib_msgs
+    tf2_msgs
+  )
+
+  catkin_package(
+    DEPENDS message_runtime
+  )
+
+elseif("$ENV{ROS_VERSION}" STREQUAL "2")
+
+  find_package(ament_cmake REQUIRED)
+  find_package(std_msgs REQUIRED)
+  find_package(geometry_msgs REQUIRED)
+  find_package(tf2_msgs REQUIRED)
+  find_package(rosidl_default_generators REQUIRED)
+
+  # Three interfaces are ROS 1 only:
+  #   BioIKTarget - referenceLinkName breaks rosidl's field-name rule
+  #                 ^[a-z][a-z0-9_]*$; renaming it is a rosbridge wire-format
+  #                 change across extend_bio_ik and the Unity sender, deferred
+  #                 until a ROS 2 consumer needs this message.
+  #   ArmControl  - embeds BioIKTarget[], so it cannot generate without it.
+  #   ArmResponse - sole user of moveit_msgs; no ROS 2 consumer needs it.
+  # Anything added below needs snake_case field names and fully-qualified
+  # types (std_msgs/Header, never bare Header) or rosidl generation fails.
+  rosidl_generate_interfaces(${PROJECT_NAME}
+    msg/GripperControl.msg
+    msg/LinkDetails.msg
+    msg/ControlDebug.msg
+    msg/Float64MultiArrayStamped.msg
+    msg/GripperResponse.msg
+    msg/FileUploadStatus.msg
+    msg/GripperJointInfo.msg
+    msg/GripperSensorInfo.msg
+    msg/CortexConfiguration.msg
+    msg/ConnectionManager.msg
+    msg/VRHandStates.msg
+    msg/HandStateInfo.msg
+    msg/VRTransform.msg
+    srv/GetListOfFiles.srv
+    srv/LoadAllFilesInFolder.srv
+    srv/LoadFile.srv
+    srv/SaveFile.srv
+    srv/DeleteFile.srv
+    srv/ControlManager.srv
+    srv/CortexConfigurationInfo.srv
+    srv/SafetyParameter.srv
+    srv/RaiseOperatorError.srv
+    action/CollectData.action
+    DEPENDENCIES std_msgs geometry_msgs tf2_msgs
+  )
+
+  ament_package()
+
+else()
+
+  message(FATAL_ERROR
+    "ROS_VERSION environment variable must be 1 or 2, got '$ENV{ROS_VERSION}'")
+
+endif()
