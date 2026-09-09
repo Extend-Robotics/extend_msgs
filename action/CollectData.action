@@ -2,7 +2,6 @@
 string dataset_dir
 string task_name
 int32 episode_idx
-int32 max_timesteps
 
 ---
 # Result: Notify when the data collection is done
